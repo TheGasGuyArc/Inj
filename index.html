@@ -1,198 +1,108 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07080c">
-  <meta name="description" content="RUNNERS — The market never sleeps. An onchain financial city built for Injective.">
-  <title>RUNNERS — The Market Never Sleeps</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#05070a">
+  <meta name="description" content="RUNNERS — The market never sleeps. An interactive financial city for Injective and RunUp.">
+  <title>RUNNERS. — The Market Never Sleeps</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="boot" class="boot">
     <div class="boot-grid"></div>
-    <div class="boot-card">
-      <div class="eyebrow">INJECTIVE // MARKET NETWORK</div>
-      <h1>RUNNERS<span>.</span></h1>
-      <p>THE MARKET NEVER SLEEPS.</p>
-      <div class="boot-line"><span></span></div>
-      <button id="enterBtn" class="primary-btn">ENTER THE CITY <b>↗</b></button>
+    <div class="boot-inner">
+      <div class="eyebrow">INJECTIVE // MARKET NETWORK // 001</div>
+      <div class="boot-logo">RUNNERS<span>.</span></div>
+      <div class="boot-tag">THE MARKET NEVER SLEEPS.</div>
+      <div class="progress"><i></i></div>
+      <button id="enterCity" class="red-btn">ENTER THE CITY ↗</button>
     </div>
   </div>
 
-  <div id="app" class="app is-hidden">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-mark">R</div>
-        <div>
-          <strong>RUNNERS</strong>
-          <small>INJECTIVE MARKET CITY</small>
+  <header class="nav">
+    <a href="#top" class="brand"><b>R</b><span>RUNNERS<small>INJECTIVE MARKET CITY</small></span></a>
+    <nav>
+      <a href="#map">CITY</a><a href="#market">MARKET</a><a href="#profile">RUNNER</a><a href="#runup">RUNUP</a>
+    </nav>
+    <div class="nav-right"><span class="online"><i></i> NETWORK ONLINE</span><button id="connect" class="wallet-btn">CONNECT WALLET</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">SECTOR 01 // THE CITY</div>
+        <h1>RUN<br><em>THE</em><strong>MARKET.</strong></h1>
+        <p>A living financial city built around Injective. Explore districts, chase market events, complete missions and enter the RunUp launch terminal.</p>
+        <div class="actions"><button class="red-btn" data-scroll="#map">EXPLORE CITY ↓</button><button class="outline-btn" data-scroll="#runup">OPEN RUNUP TERMINAL</button></div>
+      </div>
+      <div class="city-scene">
+        <div class="moon"></div><div class="skyline"></div><div class="windows"></div>
+        <div class="label l1">EXCHANGE / 01</div><div class="label l2">PERPS / 02</div><div class="label l3">RUNUP / 03</div><div class="label l4">VAULT / 04</div>
+        <div id="runner" class="runner"><span class="runner-glow"></span><span class="head"></span><span class="body"></span><span class="leg a"></span><span class="leg b"></span></div>
+        <div class="road"></div>
+        <div class="scene-hud">RUNNER <b>#4821</b> &nbsp; // &nbsp; LVL <b id="hudLvl">07</b></div>
+      </div>
+    </section>
+
+    <section id="map" class="section map">
+      <div class="section-head"><div><div class="eyebrow">CITY MAP // 04 DISTRICTS</div><h2>CHOOSE<br>YOUR ROUTE.</h2></div><div class="coords">INJ MAINNET<br>MARKET NETWORK / 001</div></div>
+      <div class="districts">
+        <button class="district hot" data-district="THE EXCHANGE"><span>01</span><b>↗</b><h3>THE EXCHANGE</h3><p>Price discovery. Order flow. Noise.</p><small>ENTER DISTRICT →</small></button>
+        <button class="district" data-district="PERP DISTRICT"><span>02</span><b>∞</b><h3>PERP DISTRICT</h3><p>Leverage changes the weather.</p><small>ENTER DISTRICT →</small></button>
+        <button class="district" data-district="RUNUP TERMINAL"><span>03</span><b>↑</b><h3>RUNUP TERMINAL</h3><p>Where new markets enter the city.</p><small>ENTER DISTRICT →</small></button>
+        <button class="district" data-district="THE VAULT"><span>04</span><b>▣</b><h3>THE VAULT</h3><p>Capital moves quietly here.</p><small>ENTER DISTRICT →</small></button>
+      </div>
+    </section>
+
+    <section id="market" class="section market">
+      <div class="section-head"><div><div class="eyebrow">LIVE MARKET // SIMULATION</div><h2>SOMETHING<br>IS MOVING.</h2></div><div class="quote">INJ/USDT <strong id="price">$14.82</strong> <i id="change">+4.82%</i></div></div>
+      <div class="market-grid">
+        <div class="chart-panel"><div class="chart-nav"><b>INJ PERPETUAL</b><span>1H</span><span>4H</span><span>1D</span></div><canvas id="chart"></canvas></div>
+        <div class="event-panel"><div class="eyebrow red">⚠ MARKET EVENT</div><h3 id="eventTitle">VOLATILITY<br>DETECTED.</h3><p id="eventCopy">A new wave is moving through the city. Runners are leaving the quiet districts.</p><div class="event-stats"><div>VOLUME<strong id="volume">$1.28M</strong></div><div>RUNNERS<strong id="runnerCount">482</strong></div></div><button id="joinEvent" class="red-btn">JOIN EVENT ↗</button></div>
+      </div>
+    </section>
+
+    <section id="profile" class="section profile">
+      <div class="profile-card">
+        <div class="avatar-wrap"><div class="avatar-ring"><div class="avatar">R</div></div><small>LVL <b id="level">07</b></small></div>
+        <div class="profile-main">
+          <div class="eyebrow">RUNNER PROFILE</div><h3 id="profileName">UNREGISTERED RUNNER</h3><p>Connect a wallet to claim your Runner identity and start accumulating city XP.</p>
+          <div class="xp-line"><span>XP <b id="xpText">6,420 / 8,000</b></span><span id="rank">RANK #142</span></div><div class="xpbar"><i id="xpBar"></i></div>
+          <div class="stats"><div><b id="missions">08</b><span>MISSIONS</span></div><div><b id="crates">19</b><span>CRATES</span></div><div><b id="distance">4.8</b><span>KM RUN</span></div></div>
+        </div>
+        <div class="mission-list"><div class="eyebrow">ACTIVE MISSIONS</div>
+          <button class="mission" data-xp="250"><span>01</span><b>WAKE THE MARKET</b><i>+250 XP</i></button>
+          <button class="mission" data-xp="500"><span>02</span><b>CHASE VOLATILITY</b><i>+500 XP</i></button>
+          <button class="mission" data-xp="750"><span>03</span><b>ENTER RUNUP</b><i>+750 XP</i></button>
         </div>
       </div>
-      <div class="top-status">
-        <span class="pulse"></span> NETWORK ONLINE
-        <span class="divider"></span>
-        <span id="clock">--:--:--</span>
+    </section>
+
+    <section id="runup" class="section runup">
+      <div class="terminal">
+        <div class="terminal-bar"><span>RUNUP // LAUNCH TERMINAL</span><span>INJ-MAINNET</span></div>
+        <div class="terminal-body">
+          <div><div class="eyebrow">THE LAUNCH DISTRICT</div><h2>NEW MARKETS<br><em>ENTER HERE.</em></h2><p>RunUp connects new token launches to Injective's financial infrastructure. This terminal is the future home of your launch.</p><button id="terminalBtn" class="red-btn">OPEN LAUNCH TERMINAL ↗</button></div>
+          <div class="terminal-screen">
+            <div class="term-row"><span>STATUS</span><b class="green">ONLINE</b></div>
+            <div class="term-row"><span>NETWORK</span><b>INJECTIVE</b></div>
+            <div class="term-row"><span>MODE</span><b>PUBLIC</b></div>
+            <div class="term-row"><span>NEXT LAUNCH</span><b>CLASSIFIED</b></div>
+            <div class="terminal-prompt">&gt; THE RUNNER IS COMING<span class="cursor"></span></div>
+          </div>
+        </div>
       </div>
-      <button id="walletBtn" class="wallet-btn">CONNECT WALLET</button>
-    </header>
+    </section>
 
-    <main>
-      <section id="city" class="hero">
-        <div class="noise"></div>
-        <div class="hero-copy">
-          <div class="eyebrow">SECTOR 01 // THE CITY</div>
-          <h2>RUN<br><i>THE</i> MARKET.</h2>
-          <p>Explore a financial city powered by Injective. Find events, complete missions, and enter the RunUp terminal.</p>
-          <div class="hero-actions">
-            <button class="primary-btn" data-scroll="#districts">EXPLORE CITY <b>↓</b></button>
-            <button class="ghost-btn" data-scroll="#terminal">OPEN RUNUP TERMINAL</button>
-          </div>
-        </div>
+    <footer class="section footer">
+      <div><div class="eyebrow">RUNNERS // 2026</div><h2>THE MARKET<br>NEVER SLEEPS.</h2></div>
+      <div class="footer-links"><a href="#map">CITY</a><a href="#market">MARKET</a><a href="#runup">RUNUP</a><button id="footerWallet">WALLET</button></div>
+    </footer>
+  </main>
 
-        <div class="city-stage">
-          <div class="skyline skyline-back"></div>
-          <div class="skyline skyline-front"></div>
-          <div class="sun"></div>
-          <div class="scan"></div>
-          <div id="runner" class="runner">
-            <div class="runner-glow"></div>
-            <div class="runner-head"></div>
-            <div class="runner-body"></div>
-            <div class="runner-leg left"></div>
-            <div class="runner-leg right"></div>
-          </div>
-          <div class="street"></div>
-          <div class="city-label label-exchange">EXCHANGE</div>
-          <div class="city-label label-runup">RUNUP</div>
-          <div class="city-label label-vault">VAULT</div>
-        </div>
-      </section>
-
-      <section id="districts" class="section districts">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">CITY MAP // 04 DISTRICTS</span>
-            <h3>Choose your route.</h3>
-          </div>
-          <div class="coordinates">34.0522° N / 118.2437° W</div>
-        </div>
-        <div class="district-grid">
-          <button class="district-card red" data-event="EXCHANGE">
-            <span class="card-no">01</span><span class="card-icon">↗</span>
-            <h4>THE EXCHANGE</h4><p>Price discovery. Order flow. Noise.</p><small>ENTER DISTRICT →</small>
-          </button>
-          <button class="district-card" data-event="PERP DISTRICT">
-            <span class="card-no">02</span><span class="card-icon">∞</span>
-            <h4>PERP DISTRICT</h4><p>Leverage changes the weather.</p><small>ENTER DISTRICT →</small>
-          </button>
-          <button class="district-card" data-event="RUNUP">
-            <span class="card-no">03</span><span class="card-icon">↑</span>
-            <h4>RUNUP TERMINAL</h4><p>Where new markets enter the city.</p><small>ENTER DISTRICT →</small>
-          </button>
-          <button class="district-card" data-event="VAULT">
-            <span class="card-no">04</span><span class="card-icon">▣</span>
-            <h4>THE VAULT</h4><p>Capital moves quietly here.</p><small>ENTER DISTRICT →</small>
-          </button>
-        </div>
-      </section>
-
-      <section class="section market">
-        <div class="market-head">
-          <div>
-            <span class="eyebrow">LIVE MARKET // SIMULATION</span>
-            <h3>Something is moving.</h3>
-          </div>
-          <div class="market-ticker">INJ/USDT <b id="injPrice">$14.82</b> <span id="injChange">+4.82%</span></div>
-        </div>
-        <div class="market-layout">
-          <div class="chart-card">
-            <div class="chart-meta"><span>INJ PERPETUAL</span><span>1H</span><span>4H</span><span>1D</span></div>
-            <canvas id="chart"></canvas>
-          </div>
-          <div class="event-card">
-            <span class="event-tag">⚠ MARKET EVENT</span>
-            <h4 id="eventTitle">VOLATILITY DETECTED</h4>
-            <p id="eventText">A new wave is moving through the city. Runners are leaving the quiet districts.</p>
-            <div class="event-data"><span>VOLUME <b id="eventVolume">$1.28M</b></span><span>RUNNERS <b id="eventRunners">482</b></span></div>
-            <button id="eventBtn" class="ghost-btn">JOIN EVENT ↗</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section runner-section">
-        <div class="runner-panel">
-          <div class="runner-visual">
-            <div class="avatar-ring"><div class="avatar">R</div></div>
-            <span class="level">LVL <b id="level">07</b></span>
-          </div>
-          <div class="runner-info">
-            <span class="eyebrow">RUNNER PROFILE</span>
-            <h3>UNREGISTERED RUNNER</h3>
-            <p>Connect a wallet to claim your Runner identity and start accumulating city XP.</p>
-            <div class="xp-row"><span>XP <b id="xpText">6,420 / 8,000</b></span><span id="rank">RANK #142</span></div>
-            <div class="xp-track"><span id="xpBar"></span></div>
-            <div class="stats">
-              <div><b id="missions">08</b><span>MISSIONS</span></div>
-              <div><b id="crates">19</b><span>CRATES</span></div>
-              <div><b id="distance">4.8</b><span>KM RUN</span></div>
-            </div>
-          </div>
-          <div class="mission-list">
-            <span class="eyebrow">ACTIVE MISSIONS</span>
-            <button class="mission" data-mission="gm"><b>01</b><span>WAKE THE MARKET</span><i>+250 XP</i></button>
-            <button class="mission" data-mission="event"><b>02</b><span>CHASE VOLATILITY</span><i>+500 XP</i></button>
-            <button class="mission" data-mission="runup"><b>03</b><span>ENTER RUNUP</span><i>+750 XP</i></button>
-          </div>
-        </div>
-      </section>
-
-      <section id="terminal" class="section terminal">
-        <div class="terminal-frame">
-          <div class="terminal-top"><span>RUNUP // LAUNCH TERMINAL</span><span>INJ-MAINNET</span></div>
-          <div class="terminal-body">
-            <div>
-              <span class="eyebrow">THE LAUNCH DISTRICT</span>
-              <h3>NEW MARKETS<br>ENTER HERE.</h3>
-              <p>RunUp connects new token launches to Injective's financial infrastructure. This interface is the future home of your launch.</p>
-              <button class="primary-btn" id="launchBtn">OPEN LAUNCH TERMINAL ↗</button>
-            </div>
-            <div class="terminal-screen">
-              <div class="terminal-line"><span>STATUS</span><b>ONLINE</b></div>
-              <div class="terminal-line"><span>NETWORK</span><b>INJECTIVE</b></div>
-              <div class="terminal-line"><span>MODE</span><b>PUBLIC</b></div>
-              <div class="terminal-line"><span>NEXT LAUNCH</span><b>CLASSIFIED</b></div>
-              <div class="terminal-prompt">&gt; THE RUNNER IS COMING<span class="cursor"></span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section footer-section">
-        <div>
-          <span class="eyebrow">RUNNERS // 2026</span>
-          <h3>THE MARKET<br>NEVER SLEEPS.</h3>
-        </div>
-        <div class="footer-links"><a href="#city">CITY</a><a href="#districts">MAP</a><a href="#terminal">RUNUP</a><button id="footerWallet">WALLET</button></div>
-      </section>
-    </main>
-
-    <div id="toast" class="toast">EVENT JOINED <span>+500 XP</span></div>
-    <div id="walletModal" class="modal is-hidden">
-      <div class="modal-box">
-        <button class="close" id="closeModal">×</button>
-        <span class="eyebrow">WALLET ACCESS</span>
-        <h3>CONNECT YOUR RUNNER.</h3>
-        <p>This V2 prototype uses a demo wallet flow. Real Injective wallet integration comes next.</p>
-        <button class="primary-btn" id="demoConnect">CONNECT DEMO WALLET ↗</button>
-      </div>
-    </div>
-  </div>
-  <script src="js/market.js"></script>
-  <script src="js/runner.js"></script>
-  <script src="js/city.js"></script>
-  <script src="js/wallet.js"></script>
+  <div id="modal" class="modal hidden"><div class="modal-box"><button id="closeModal" class="close">×</button><div class="eyebrow" id="modalEyebrow">RUNNERS</div><h2 id="modalTitle">CONNECT YOUR RUNNER.</h2><p id="modalText">Wallet connection is ready for the production integration. This build uses a safe demo state so the public GitHub Pages site never asks for seed phrases or private keys.</p><button id="modalAction" class="red-btn">CONTINUE</button></div></div>
+  <div id="toast" class="toast">EVENT JOINED <b>+500 XP</b></div>
   <script src="js/app.js"></script>
 </body>
 </html>
