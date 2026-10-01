@@ -1,15 +1,14 @@
-# RUNNERS — Final Front-End
+# RUNNERS — V2 Front-End
 
-This package is the polished static front-end for the RUNNERS / Injective / RunUp concept.
+A polished static front-end for the RUNNERS / Injective / RunUp concept.
 
-## GitHub Pages deployment
+## GitHub Pages
 
-1. Extract this ZIP.
-2. Open the extracted `runners-final` folder.
-3. Upload **all files and folders inside it** to the root of your GitHub repository.
-4. Your repository root must look like:
+Extract the ZIP first. Upload the **contents** of this folder to the root of the GitHub repository — not the ZIP itself.
 
-```
+The repository root must contain:
+
+```text
 index.html
 css/style.css
 js/app.js
@@ -17,27 +16,33 @@ assets/
 README.md
 ```
 
-5. GitHub → Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.
-6. Keep your custom domain in Pages if you already configured it.
+Then GitHub → Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
 
-## Important
+## Included
 
-This version is intentionally safe as a static public demo:
-- no seed phrase
-- no private-key handling
-- no fake "live on-chain" claims
-- market values are visual/demo values
-- wallet button is the production integration point
-- RunUp terminal is the production launch integration point
+- cinematic boot screen
+- responsive market-city hero
+- animated skyline + runner
+- market ticker
+- interactive city map and route nodes
+- playable local/test run mode
+- timer, distance, steps and energy
+- optional browser GPS request
+- nearby chest UI
+- simulated market chart/feed clearly labeled as simulated
+- daily quest board with XP
+- runner profile / leveling
+- RunUp launch terminal
+- wallet-safe demo modal
 
-## Production integration
+## Production integrations
 
-To make the launch actually live, the next layer is:
+This is intentionally a static public build. To make it genuinely on-chain, wire in:
 - Injective wallet connection
-- real Injective market data
-- real wallet address/profile
-- real RunUp launch URL/API flow
-- real contract/token data
-- optional indexed runner XP / missions
+- real Injective market/indexer data
+- real Runner identity/profile
+- real quests/XP storage
+- real RunUp launch URL/API
+- real token/contract data
 
-Do not put private keys or seed phrases into front-end code.
+Never put seed phrases or private keys in frontend code.
